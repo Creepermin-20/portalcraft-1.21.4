@@ -12,11 +12,13 @@ import net.minecraft.util.Identifier;
 
 public class PortalCraftItems {
 
-    public static final Item PEDESTAL_BUTTON = registerItem("pedestal_button", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PortalCraft.MOD_ID,"pedestal_button")))));
-    public static final Item WEIGHTED_BUTTON = registerItem("weighted_button", new Item(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PortalCraft.MOD_ID, "weighted_button")))));
+    public static final Item PEDESTAL_BUTTON = registerItem("pedestal_button", new Item.Settings());
+    public static final Item WEIGHTED_BUTTON = registerItem("weighted_button", new Item.Settings());
 
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(PortalCraft.MOD_ID, name), item);
+    private static Item registerItem(String name, Item.Settings itemSettings) {
+        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PortalCraft.MOD_ID, name));
+        Item item = new Item(itemSettings.registryKey(key));
+        return Registry.register(Registries.ITEM, key, item);
     }
 
     public static void registerModItems() {

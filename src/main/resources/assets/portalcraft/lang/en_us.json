@@ -1,4 +1,11 @@
 {
   "item.portalcraft.pedestal_button": "Pedestal Button",
-  "item.portalcraft.weighted_button": "Weighted Button"
+  "item.portalcraft.weighted_button": "Weighted Button",
+
+  "item.portalcraft.white_wall_tile_half": "White Wall Tile Half",
+  "item.portalcraft.white_ceiling_tile_half": "White Ceiling Tile Half",
+  "item.portalcraft.white_wall_tile": "White Wall Tile",
+  "item.portalcraft.white_floor_tile_half": "White Floor Tile Half",
+  "item.portalcraft.checker_floor_tile": "Checker Floor Tile"
+
 }
