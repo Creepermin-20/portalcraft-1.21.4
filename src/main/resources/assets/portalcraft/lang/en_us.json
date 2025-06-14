@@ -6,6 +6,15 @@
   "item.portalcraft.white_ceiling_tile_half": "White Ceiling Tile Half",
   "item.portalcraft.white_wall_tile": "White Wall Tile",
   "item.portalcraft.white_floor_tile_half": "White Floor Tile Half",
-  "item.portalcraft.checker_floor_tile": "Checker Floor Tile"
+  "item.portalcraft.checker_floor_tile": "Checker Floor Tile",
 
+  "item.portalcraft.white_wall_tile_half_stairs": "White Wall Tile Half Stairs",
+  "item.portalcraft.white_ceiling_tile_half_stairs": "White Floor Tile Half Stairs",
+  "item.portalcraft.white_floor_tile_half_stairs": "White Ceiling Tile Half Stairs",
+  "item.portalcraft.white_wall_tile_half_stairs_slab": "White Wall Tile Half Slab",
+  "item.portalcraft.white_floor_tile_half_stairs_slab": "White Floor Tile Half Slab",
+  "item.portalcraft.white_ceiling_tile_half_slab": "White Ceiling Tile Half Slab",
+
+  "itemgroup.portalcraft.portal_block_items": "PortalCraft Building Blocks",
+  "itemgroup.portalcraft.portal_functionals": "PortalCraft Functional Blocks"
 }

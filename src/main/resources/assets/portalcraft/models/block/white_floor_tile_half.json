@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "portalcraft:block/white_floor_tile_half"
-  }
-}

@@ -1,6 +1,7 @@
 package com.portalcraft;
 
 import com.portalcraft.block.PortalCraftBlocks;
+import com.portalcraft.item.PortalCraftItemGroups;
 import com.portalcraft.item.PortalCraftItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,6 +14,7 @@ public class PortalCraft implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		PortalCraftItemGroups.registerModItemGroups();
 		PortalCraftItems.registerModItems();
 		PortalCraftBlocks.registerModBlocks();
 	}

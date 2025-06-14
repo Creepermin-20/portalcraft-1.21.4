@@ -10,23 +10,27 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
+import java.util.function.Function;
+
 public class PortalCraftItems {
 
-    public static final Item PEDESTAL_BUTTON = registerItem("pedestal_button", new Item.Settings());
-    public static final Item WEIGHTED_BUTTON = registerItem("weighted_button", new Item.Settings());
+    public static final Item PEDESTAL_BUTTON = register("pedestal_button", Item::new, new Item.Settings());
+    public static final Item WEIGHTED_BUTTON = register("weighted_button", Item::new, new Item.Settings());
 
-    private static Item registerItem(String name, Item.Settings itemSettings) {
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PortalCraft.MOD_ID, name));
-        Item item = new Item(itemSettings.registryKey(key));
-        return Registry.register(Registries.ITEM, key, item);
+    public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+        // Create the item key.
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PortalCraft.MOD_ID, name));
+
+        // Create the item instance.
+        Item item = itemFactory.apply(settings.registryKey(itemKey));
+
+        // Register the item.
+        Registry.register(Registries.ITEM, itemKey, item);
+
+        return item;
     }
 
     public static void registerModItems() {
         PortalCraft.LOGGER.info("Registering PortalCraft Items for " + PortalCraft.MOD_ID);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(fabricItemGroupEntries -> {
-            fabricItemGroupEntries.add(PEDESTAL_BUTTON);
-            fabricItemGroupEntries.add(WEIGHTED_BUTTON);
-        });
     }
 }
